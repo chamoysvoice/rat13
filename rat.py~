@@ -1,0 +1,18 @@
+import sys
+
+def rat(f, alfa):
+	jump = 13
+    inp = open(f,'r')
+    message = inp.read()
+    cyphertext = ""
+    for letter in message:
+        cyphertext += alfa[(ord(letter.lower()) +  jump - 97) % len(alfa)] if (97 <= ord(letter.lower()) < 123) else letter
+    return cyphertext
+
+alfa = []
+for a in range(26):
+    alfa.append(chr(ord('a') + a))
+
+
+print rat(sys.argv[1],alfa)
+print 

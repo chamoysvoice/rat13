@@ -1,0 +1,15 @@
+def rat(f, alfa):
+	inpu = open(f,r)
+	message = inpu.read()
+        cyphertext = ""
+        for letter in message:
+                cyphertext += alfa[(ord(letter.lower()) +  13 - 97) % len(alfa)] if (97 <= ord(letter.lower()) < 123) else letter
+                return cyphertext
+                
+                alfa = []
+                for a in range(26):
+                        alfa.append(chr(ord('a') + a))
+                        
+                        
+                        print rat(argv[1],alfa)
+                        print 
